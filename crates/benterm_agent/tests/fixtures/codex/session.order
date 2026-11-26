@@ -1,0 +1,58 @@
+# Codex 0.171.0, one session. It reports without asking, and works for a
+# moment as it starts.
+osc state=idle:app=codex
+osc state=working:app=codex
+osc state=idle:app=codex
+is done
+work 1
+
+# A prompt it answers with one word.
+osc state=working:app=codex
+is working
+work 2
+hook SessionStart
+hook UserPromptSubmit
+hook Stop
+is done
+osc state=done:app=codex
+is done
+
+# A prompt to run a command, which it asks leave for and is allowed. It
+# tells `idle` when the user starts to type.
+osc state=idle:app=codex
+osc state=working:app=codex
+hook UserPromptSubmit
+hook PreToolUse tool=Bash
+hook PermissionRequest tool=Bash
+osc state=blocked:app=codex:kind=permission
+is permission
+work 3
+osc state=working:app=codex
+is working
+work 4
+hook PostToolUse tool=Bash
+hook Stop
+osc state=done:app=codex
+is done
+
+# A prompt to start a command in a background terminal. It tells `done`
+# while the command runs, and nothing more for the 69 seconds until the
+# next prompt.
+osc state=idle:app=codex
+osc state=working:app=codex
+hook UserPromptSubmit
+hook PreToolUse tool=Bash
+hook Stop
+osc state=done:app=codex
+is done
+work 5
+
+# A prompt it answers with one word.
+osc state=idle:app=codex
+osc state=working:app=codex
+hook UserPromptSubmit
+is working
+hook Stop
+osc state=done:app=codex
+is done
+work 6

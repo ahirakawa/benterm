@@ -1,0 +1,18 @@
+[package]
+name = "benterm_ipc"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+benterm_agent.workspace = true
+benterm_config.workspace = true
+benterm_report.workspace = true
+libc = "0.2"
+serde = { version = "1", features = ["derive"] }
+# Settings files keep the order of their keys when setup rewrites them.
+serde_json = { version = "1", features = ["preserve_order"] }
+
+[dev-dependencies]
+tempfile.workspace = true

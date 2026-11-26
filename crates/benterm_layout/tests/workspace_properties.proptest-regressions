@@ -1,0 +1,11 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 775974e904dc4cd5f11f26e05e421bf30fad69c648fd5509c78ab4df61fcad13 # shrinks to ops = [Rename(Index(0), "a\u{2028}a")]
+cc ac6796a128044052a5669507a739b2a966fb17ffd8d65e30e5394e3bf6b14488 # shrinks to ops = [Rename(Index(0), "a\u{2028}a")]
+cc f8797af3ca51617b06ef1059636b86e82261ae785cfc25ba15de2d14021bb009 # shrinks to ops = [Rename(Index(0), "a\u{2028}a")]
+cc d10b6f7ab5b35d19b6d1a24fb60f15f030edd111fdd46c8ac447cdf9f4d3a953 # shrinks to ops = [Add(Some("a\u{2028}a"))]
+cc 087d70fb5a11bfea1f26f762e1abe659e4f4bce99071ea8eebbf415bc86406c5 # shrinks to ops = [Rename(Index(0), "a\u{2028}a")]

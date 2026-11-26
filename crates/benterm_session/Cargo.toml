@@ -1,0 +1,17 @@
+[package]
+name = "benterm_session"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+# A ratio read back from the file has to be the ratio that was written.
+serde_json = { version = "1", features = ["float_roundtrip"] }
+# Tells whether the address of a browser pane has a host and a port.
+url = "2"
+
+[dev-dependencies]
+proptest.workspace = true
+tempfile.workspace = true

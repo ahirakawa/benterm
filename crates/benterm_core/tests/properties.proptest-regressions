@@ -1,0 +1,12 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc d5f7d06d21cdeb910ec2cf2bde810f02b37323b7a6d4fcd11d69f5f6f2b20bf6 # shrinks to size = GridSize { rows: 0, cols: 0 }, input = [240, 159, 153, 130]
+cc 161d7489d81cf627f391bc678d2d1579e233f1d13aebfbb14e9e4e1001c15e7e # shrinks to size = GridSize { rows: 0, cols: 0 }, input = [227, 133, 128], cuts = []
+cc 08d5ed0bf29bab59aa8bce826687d57321f6dca093dd2b61fa75a12ff43f3dae # shrinks to size = GridSize { rows: 0, cols: 0 }, input = [227, 128, 128]
+cc 7ee5bf3f3f03e72a2edd6d6ea77cb7da1732748c6a4fcc1cadd557d7d9179b57 # shrinks to size = GridSize { rows: 0, cols: 0 }, ops = [Feed([230, 188, 162])]
+cc 72c80bb0cf3a133652f3ed94ace91abf8ac4354c512ea724e50c5ae92e4940fc # shrinks to size = GridSize { rows: 0, cols: 0 }, ops = [Feed([230, 188, 162, 13]), Feed([27, 91, 80, 13, 10])]
+cc 563686182a81db9bd674e626b1bdc4b96dddee1cb3e3d7a5f9ab69e861118f2c # shrinks to size = GridSize { rows: 0, cols: 0 }, ops = [Feed([13, 10]), Resize(GridSize { rows: 0, cols: 3 }), Feed([97, 65, 48, 32, 32, 32, 65, 32, 32, 32, 65, 97, 97, 32, 97, 239, 189, 177, 97, 240, 159, 153, 130]), Resize(GridSize { rows: 21, cols: 0 }), Feed([32])]

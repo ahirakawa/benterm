@@ -1,0 +1,44 @@
+[package]
+name = "benterm_ui"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+benterm_agent.workspace = true
+benterm_config.workspace = true
+benterm_core.workspace = true
+benterm_github.workspace = true
+benterm_ipc.workspace = true
+benterm_layout.workspace = true
+benterm_log.workspace = true
+benterm_report.workspace = true
+benterm_session.workspace = true
+benterm_task.workspace = true
+benterm_terminal.workspace = true
+block2 = "0.6"
+futures.workspace = true
+gpui.workspace = true
+libc = "0.2"
+notify.workspace = true
+objc2 = "0.6"
+objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSGeometry", "NSString", "objc2-core-foundation"] }
+pulldown-cmark.workspace = true
+raw-window-handle = "0.6"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tempfile.workspace = true
+unicode-width.workspace = true
+url = "2"
+
+[dev-dependencies]
+proptest.workspace = true
+gpui = { workspace = true, features = ["test-support"] }
+
+# WebKit only works on the main thread, which the test harness keeps for
+# itself.
+[[test]]
+name = "webkit"
+harness = false

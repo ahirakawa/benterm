@@ -1,0 +1,9 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc a719f7cafc96002ddd09a48763b7444f1eb52ff60bb68de245f41a9832adc9a5 # shrinks to key = "0", shift = false, modes = Modes { bracketed_paste: false, app_cursor_keys: false, mouse_tracking: Off, mouse_encoding: Default, alternate_screen: false, keyboard: KeyboardFlags { disambiguate: false, report_event_types: false, report_alternate_keys: false, report_all_keys_as_escapes: false, report_associated_text: false } }
+cc 506402fa0b3b2d3a2973f3ad48d7c647d300c01277e68b85135d1babbbac504c # shrinks to key = "a", shift = false, alt = true, modes = Modes { bracketed_paste: false, app_cursor_keys: false, mouse_tracking: Off, mouse_encoding: Default, alternate_screen: false, keyboard: KeyboardFlags { disambiguate: false, report_event_types: false, report_alternate_keys: false, report_all_keys_as_escapes: false, report_associated_text: false } }, option_as_meta = true
+cc 54f85955da09185f1ce20d23dcc05988733f5cbb82ab7ae08a874abd98694553 # shrinks to mut press = Press { key: "left", key_char: None, modifiers: [false, false, false, false] }, modes = Modes { bracketed_paste: false, app_cursor_keys: false, mouse_tracking: Off, mouse_encoding: Default, alternate_screen: false, keyboard: KeyboardFlags { disambiguate: false, report_event_types: false, report_alternate_keys: false, report_all_keys_as_escapes: false, report_associated_text: false } }, options = KeyOptions { option_as_meta: false }

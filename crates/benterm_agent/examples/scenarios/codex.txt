@@ -1,0 +1,52 @@
+# Records Codex in each state. Run from the workspace root with a clean
+# environment and a separate CODEX_HOME, so that the user's own Codex
+# settings and hooks stay out of the recording and are not changed:
+#
+#   mkdir -p /tmp/benterm-codex-home /tmp/benterm-agent-codex
+#   install -m 600 ~/.codex/auth.json /tmp/benterm-codex-home/auth.json
+#   printf '%s\n' 'check_for_update_on_startup = false' '' \
+#     '[projects."/private/tmp/benterm-agent-codex"]' 'trust_level = "trusted"' \
+#     > /tmp/benterm-codex-home/config.toml
+#   env -i HOME="$HOME" USER="$USER" PATH="$PATH" LANG=en_US.UTF-8 \
+#     CODEX_HOME=/tmp/benterm-codex-home \
+#     cargo run -p benterm_agent --example record -- \
+#     crates/benterm_agent/examples/scenarios/codex.txt \
+#     "$TMPDIR/benterm-recordings/codex"
+#
+# Afterwards, stop the app-server daemon Codex starts from that home
+# (pkill -f /private/tmp/benterm-codex-home/) and delete the directory;
+# it holds a copy of the login.
+size 40 120
+cwd /tmp/benterm-agent-codex
+run codex -a on-request -s read-only
+wait Ask Codex to do anything
+sleep 3000
+save idle
+send Write a 200-word story about a lighthouse keeper. Reply in chat only; do not run commands or create files.
+sleep 500
+send \r
+wait esc to interrupt
+sleep 1500
+save working
+wait Worked for
+sleep 2000
+save done
+send Run exactly this shell command: touch marker.txt
+sleep 500
+send \r
+wait Press enter to confirm or esc to cancel
+sleep 1500
+save permission
+send \e
+wait Conversation interrupted
+sleep 2000
+send \e[Z
+sleep 1500
+send Before planning anything, use the request_user_input tool to ask me whether I prefer tea or coffee. Do nothing else.
+sleep 500
+send \r
+wait enter to submit answer
+sleep 1500
+save question
+send \e
+sleep 1000

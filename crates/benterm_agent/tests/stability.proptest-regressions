@@ -1,0 +1,11 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 485755eb0a6ec7d7c293e24f2fe934eb08c8d1f4b3db4143fdaba533f466a542 # shrinks to base = Working, bursts = [([(0, Working, false)], 0)]
+cc 7bc8f928e695d1d77d712ec85eedac81104fced766730748f699731a88199beb # shrinks to steps = [(0, Screen(Some(Working)))]
+cc 5f189be3d9ee7c27a0be5eddf8c8ed9c788af83330b4e64cd89a4cdfde985369 # shrinks to steps = [(0, Screen(Some(Working)))]
+cc 8a43381a1d0f19e079f50356f23794b929063910cb039f815adc499edbb32690 # shrinks to steps = [(0, Screen(Some(Working)))]
+cc 489ea5c37003755c5e621dde84dedb25259f43a30021cb29589d21fa21c96c87 # shrinks to steps = [(0, Screen(Some(Working)))], last = Working

@@ -1,0 +1,44 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+default-members = ["crates/benterm"]
+
+[workspace.package]
+edition = "2024"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[workspace.dependencies]
+alacritty_terminal = "0.26"
+anyhow = "1"
+base64 = "0.23"
+benterm_agent = { path = "crates/benterm_agent" }
+benterm_config = { path = "crates/benterm_config" }
+benterm_core = { path = "crates/benterm_core" }
+benterm_github = { path = "crates/benterm_github" }
+benterm_ipc = { path = "crates/benterm_ipc" }
+benterm_layout = { path = "crates/benterm_layout" }
+benterm_log = { path = "crates/benterm_log" }
+benterm_pty = { path = "crates/benterm_pty" }
+benterm_report = { path = "crates/benterm_report" }
+benterm_session = { path = "crates/benterm_session" }
+benterm_task = { path = "crates/benterm_task" }
+benterm_terminal = { path = "crates/benterm_terminal" }
+benterm_ui = { path = "crates/benterm_ui" }
+futures = "0.3"
+notify = "9"
+parking_lot = "0.13"
+proptest = "1"
+pulldown-cmark = { version = "0.13", default-features = false }
+tempfile = "3"
+toml = "1.2"
+unicode-width = "0.2"
+
+# GPUI is pinned to a Zed revision so builds are reproducible.
+gpui = { git = "https://github.com/zed-industries/zed", rev = "2f808b3c2de049ecfdbad0fdb26763cebfcaa3b4" }
+# font-kit is what makes GPUI draw text on macOS.
+gpui_platform = { git = "https://github.com/zed-industries/zed", rev = "2f808b3c2de049ecfdbad0fdb26763cebfcaa3b4", features = ["font-kit"] }
+
+# The icon is drawn pixel by pixel, which is slow without optimization.
+[profile.dev.package.xtask]
+opt-level = 3

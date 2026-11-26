@@ -1,0 +1,7 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 781e5ddb57d49b3e8deb0c4ae78297ab9cc23e2b68203803f855787b1a9e6164 # shrinks to steps = [(0, Screen(Some(Working))), (0, Hook { says: State(Error), session: 0, subagent: false }), (0, Screen(Some(Working))), (166, Hook { says: Nothing, session: 0, subagent: false }), (334, Hook { says: Gone, session: 1, subagent: false })], last = Done

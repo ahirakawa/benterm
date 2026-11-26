@@ -1,0 +1,49 @@
+# Records Claude Code in each state. Run from the workspace root with a clean
+# environment, so that settings of the calling session do not leak in:
+#
+#   env -i HOME="$HOME" USER="$USER" PATH="$PATH" LANG=en_US.UTF-8 \
+#     cargo run -p benterm_agent --example record -- \
+#     crates/benterm_agent/examples/scenarios/claude.txt \
+#     "$TMPDIR/benterm-recordings/claude"
+#
+# The working directory must not exist yet, so that Claude Code asks whether
+# to trust it. `--setting-sources project` keeps the user's own status line,
+# hooks and default permission mode out of the recording.
+size 40 120
+cwd /tmp/benterm-agent-claude
+run claude --setting-sources project --permission-mode default
+wait Yes, I trust this folder
+sleep 2000
+save trust
+send \e[B
+sleep 1000
+send \r
+wait ? for shortcuts
+sleep 2000
+save idle
+send Write a 200-word story about a lighthouse keeper. Reply in chat only; do not create files.
+sleep 500
+send \r
+wait esc to interrupt
+sleep 1500
+save working
+wait ? for shortcuts
+sleep 2000
+save done
+send Use the Bash tool to run exactly this command: touch marker.txt
+sleep 500
+send \r
+wait Do you want to proceed?
+sleep 1500
+save permission
+send \e
+wait ? for shortcuts
+sleep 2000
+send Use the AskUserQuestion tool to ask me whether I prefer tea or coffee. Do nothing else.
+sleep 500
+send \r
+wait Enter to select
+sleep 1500
+save question
+send \e
+sleep 1000

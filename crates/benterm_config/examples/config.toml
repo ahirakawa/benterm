@@ -1,0 +1,272 @@
+# Benterm settings.
+#
+# Benterm reads this file from $XDG_CONFIG_HOME/benterm/config.toml, or from
+# ~/.config/benterm/config.toml when XDG_CONFIG_HOME is not set. Saved
+# changes apply without a restart.
+#
+# Every key is optional, and a missing key keeps its default. This sample
+# lists every key with its default value; copy only the keys you change.
+#
+# Colors are "#rrggbb" or "#rrggbbaa". A key with a bad value, or a key Benterm
+# does not know, keeps its default and is reported as a warning.
+
+# The terminal grid.
+[terminal]
+# One family, or a list in order of preference. Later families stand in
+# when the earlier ones are not installed.
+font_family = ["Sarasa Fixed J", "Menlo"]
+# Points, from 6 to 72.
+font_size = 13
+# A multiple of the font size, from 1 to 3.
+line_height = 1.5
+# Space between the pane edge and the grid, in points, from 0 to 100.
+padding = 10
+# Whether option with a key sends the key with an escape in front, as a
+# meta key, instead of typing the character the layout gives it.
+option_as_meta = false
+
+# Everything outside the terminal grid.
+[ui]
+# ".SystemUIFont" is the macOS system font.
+font_family = [".SystemUIFont"]
+# Points, from 6 to 72.
+font_size = 13
+
+# Base colors. Each component color below defaults to one of these, as its
+# comment shows, so changing a palette color also changes those components.
+[palette]
+background = "#1e1f22"
+panel = "#25262a"
+elevated = "#2d2f34"
+active = "#34363c"
+border = "#393b41"
+text = "#d4d6db"
+text_muted = "#8b8f98"
+text_dim = "#5f636b"
+accent = "#6aa1ff"
+success = "#7fc97f"
+warning = "#f0b35a"
+error = "#ef6f6f"
+diff_added = "#1f3326"
+diff_removed = "#3a2224"
+terminal_background = "#1a1b1e"
+
+# The 16 ANSI colors do not follow the palette.
+[colors.terminal]
+foreground = "#d4d6db"  # palette.text
+background = "#1a1b1e"  # palette.terminal_background
+cursor = "#d4d6db"  # palette.text
+cursor_text = "#1a1b1e"  # palette.terminal_background
+selection_background = "#6aa1ff4d"  # palette.accent at 30% opacity
+black = "#393b41"
+red = "#ef6f6f"
+green = "#7fc97f"
+yellow = "#f0b35a"
+blue = "#6aa1ff"
+magenta = "#c58af9"
+cyan = "#5fc4d0"
+white = "#d4d6db"
+bright_black = "#5f636b"
+bright_red = "#ff8b8b"
+bright_green = "#9be09b"
+bright_yellow = "#ffc978"
+bright_blue = "#8cb8ff"
+bright_magenta = "#d6a6ff"
+bright_cyan = "#7fdbe6"
+bright_white = "#ffffff"
+
+[colors.titlebar]
+background = "#25262a"  # palette.panel
+text = "#8b8f98"  # palette.text_muted
+border = "#393b41"  # palette.border
+
+[colors.sidebar]
+background = "#25262a"  # palette.panel
+border = "#393b41"  # palette.border
+section_header_text = "#8b8f98"  # palette.text_muted
+item_text = "#d4d6db"  # palette.text
+item_secondary_text = "#8b8f98"  # palette.text_muted
+item_hover_background = "#2d2f34"  # palette.elevated
+item_active_background = "#34363c"  # palette.active
+item_active_indicator = "#6aa1ff"  # palette.accent
+attention = "#f0b35a"  # palette.warning
+
+# The icons of the workspaces in the sidebar. A workspace is given one of
+# the six when it is made and keeps it until it closes.
+[colors.workspace]
+icon_1 = "#6aa1ff"  # palette.accent
+icon_2 = "#f0b35a"  # palette.warning
+icon_3 = "#7fc97f"  # palette.success
+icon_4 = "#c58af9"
+icon_5 = "#5fc4d0"
+icon_6 = "#e07fa8"
+icon_text = "#1e1f22"  # palette.background
+
+[colors.tab]
+bar_background = "#25262a"  # palette.panel
+text = "#8b8f98"  # palette.text_muted
+secondary_text = "#8b8f98"  # palette.text_muted
+active_background = "#1e1f22"  # palette.background
+active_text = "#d4d6db"  # palette.text
+active_indicator = "#6aa1ff"  # palette.accent
+separator = "#393b41"  # palette.border
+attention = "#f0b35a"  # palette.warning
+
+[colors.pane]
+header_background = "#25262a"  # palette.panel
+header_text = "#8b8f98"  # palette.text_muted
+header_border = "#393b41"  # palette.border
+focus_outline = "#6aa1ff"  # palette.accent
+divider = "#393b41"  # palette.border
+attention = "#f0b35a"  # palette.warning
+
+[colors.diff]
+added_background = "#1f3326"  # palette.diff_added
+removed_background = "#3a2224"  # palette.diff_removed
+hunk_background = "#25262a"  # palette.panel
+hunk_text = "#5f636b"  # palette.text_dim
+line_number_text = "#5f636b"  # palette.text_dim
+file_list_background = "#25262a"  # palette.panel
+file_active_background = "#34363c"  # palette.active
+added_marker = "#7fc97f"  # palette.success
+modified_marker = "#f0b35a"  # palette.warning
+removed_marker = "#ef6f6f"  # palette.error
+comment_background = "#2d2f34"  # palette.elevated
+comment_border = "#393b41"  # palette.border
+
+# Agent states in the sidebar and the progress board.
+[colors.status]
+running = "#6aa1ff"  # palette.accent
+waiting = "#f0b35a"  # palette.warning
+done = "#7fc97f"  # palette.success
+idle = "#5f636b"  # palette.text_dim
+error = "#ef6f6f"  # palette.error
+
+[colors.button]
+background = "#6aa1ff"  # palette.accent
+text = "#ffffff"
+secondary_background = "#2d2f34"  # palette.elevated
+secondary_text = "#d4d6db"  # palette.text
+secondary_border = "#393b41"  # palette.border
+
+[colors.input]
+background = "#1e1f22"  # palette.background
+text = "#d4d6db"  # palette.text
+border = "#393b41"  # palette.border
+
+[colors.statusbar]
+background = "#25262a"  # palette.panel
+text = "#8b8f98"  # palette.text_muted
+border = "#393b41"  # palette.border
+key_background = "#2d2f34"  # palette.elevated
+
+# The notifications shown for a while in the bottom right corner when an
+# agent finishes or waits, or a program asks for one. The dot before the
+# title has the color of what happened.
+[colors.toast]
+background = "#2d2f34"  # palette.elevated
+border = "#393b41"  # palette.border
+text = "#d4d6db"  # palette.text
+secondary_text = "#8b8f98"  # palette.text_muted
+hover_background = "#34363c"  # palette.active
+done = "#7fc97f"  # palette.success
+waiting = "#f0b35a"  # palette.warning
+message = "#6aa1ff"  # palette.accent
+
+# The menu a right click opens on a tab, a workspace, a row of the session
+# list or a pane. The keys of an item are drawn right of its name.
+[colors.menu]
+background = "#2d2f34"  # palette.elevated
+border = "#393b41"  # palette.border
+text = "#d4d6db"  # palette.text
+key_text = "#8b8f98"  # palette.text_muted
+disabled_text = "#5f636b"  # palette.text_dim
+selected_background = "#34363c"  # palette.active
+
+# The progress board, opened with the tab above the panes. The bands of
+# the four states, and the agents of the graph, take the colors of
+# [colors.status].
+[colors.board]
+background = "#1e1f22"  # palette.background
+panel = "#25262a"  # palette.panel
+border = "#393b41"  # palette.border
+title_text = "#d4d6db"  # palette.text
+label_text = "#8b8f98"  # palette.text_muted
+axis_text = "#5f636b"  # palette.text_dim
+grid_line = "#393b41"  # palette.border
+now_line = "#d4d6db"  # palette.text
+row_hover_background = "#2d2f34"  # palette.elevated
+range_active_background = "#34363c"  # palette.active
+node_background = "#2d2f34"  # palette.elevated
+link_line = "#393b41"  # palette.border
+message_line = "#8b8f98"  # palette.text_muted
+selected_border = "#6aa1ff"  # palette.accent
+
+# Recording what each terminal's program prints, for replaying it later with
+# benterm-replay. A change applies to terminals opened after it.
+[pty_log]
+# Off unless set to true. A log holds everything the terminal showed.
+enabled = false
+# Relative to the home directory. The directory must be inside the home
+# directory; Benterm does not record when it is not.
+dir = "Library/Application Support/benterm/pty-logs"
+
+[session]
+# How many rows of each pane, the last of its scrollback and its screen
+# together, are saved and shown again above the prompt at the next start.
+# From 0 to 10000; with 0 nothing is saved. What is saved is what was on
+# the screen, also a password or a token that a program printed. The files
+# are in ~/Library/Application Support/benterm/scrollback and only you
+# can read them.
+scrollback_lines = 2000
+
+# Where the worktrees of tasks are put, each at <repository>/<branch>.
+[worktrees]
+# Relative to the home directory, as is a path that starts with ~/. A task
+# keeps the place it was made at when this changes.
+directory = ".local/share/benterm/worktrees"
+
+[tasks]
+# Set agent to "claude" or "codex" and use a model accepted by that CLI.
+# An empty agent uses Shell, and an empty model lets the selected agent choose.
+default_agent = { agent = "", model = "" }
+
+# When an agent at work is marked as stalled in the session list, on the
+# progress board and in agent list: its state still says it works, and
+# neither its screen nor the files of its directory have changed for this
+# long. The mark changes no state and no wait.
+[stall]
+# In seconds, from 1 to 86400.
+after_seconds = 600
+
+# The check of an agent's report. A turn of Claude Code or Codex that
+# edited many files or called many tools writes a report, a JSON file in
+# .benterm/ of its working directory, before it stops; the Stop hook
+# (benterm report-check) holds the report against these limits and
+# against what the turn did, and sends the agent back with what to fix.
+[report]
+# Off by default. Turn it on once `benterm setup install` has added the
+# hooks. A pane decides when it opens: one opened while this is true
+# checks (BENTERM_REPORT_CHECK=on), and goes on so until it closes. BENTERM_REPORT_CHECK=off turns the check
+# off for one terminal.
+enabled = false
+# A turn needs a report when it edited this many files,
+edited_files = 3
+# or called its tools this many times.
+tool_calls = 20
+# How many times a turn is sent back, from 0 to 5. The first stop
+# without a report only teaches the form and is not counted.
+max_rounds = 2
+# The most characters of the summary of a report, of a question it wants
+# decided, and of the agent's reply in the terminal.
+summary_max_chars = 200
+question_max_chars = 40
+reply_max_chars = 400
+
+[ipc]
+# Every request to the socket API must carry a credential the app gave
+# out. Panes of the window get one for the whole API; agents started with
+# `benterm agent run` get one for their own hooks and reports only, unless
+# started with --control. A program outside Benterm, or a benterm older
+# than the app, is refused. false lets every request through as before.
+restricted = true

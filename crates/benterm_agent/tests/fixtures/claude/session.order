@@ -1,0 +1,56 @@
+# Claude Code 2.1.330, one session. It asks `OSC 7501 ; ?` first, and
+# reports only when it is answered.
+hook SessionStart
+osc state=idle:app=claude-code
+is done
+work 0
+
+# A prompt it answers with one word.
+osc state=working:app=claude-code
+is working
+work 1
+hook UserPromptSubmit
+hook Stop
+is done
+osc state=done:app=claude-code
+is done
+
+# A prompt to run a command, which it asks leave for and is allowed.
+osc state=working:app=claude-code
+hook UserPromptSubmit
+hook PreToolUse tool=Bash
+osc state=blocked:app=claude-code:kind=permission
+hook PermissionRequest tool=Bash
+is permission
+work 2
+osc state=working:app=claude-code
+is working
+work 3
+hook PostToolUse tool=Bash
+hook Stop
+osc state=done:app=claude-code
+is done
+
+# A prompt to leave a command running in the background. It tells
+# `working` again right after the Stop hook.
+osc state=working:app=claude-code
+hook UserPromptSubmit
+hook PreToolUse tool=Bash
+osc state=working:app=claude-code:id=bg1
+hook PostToolUse tool=Bash
+hook Stop
+osc state=working:app=claude-code
+is done
+work 4
+
+# 37 seconds later the command is over, which starts a turn of its own.
+osc state=working:app=claude-code
+osc state=clear:id=bg1
+is done
+work 4
+hook UserPromptSubmit
+is working
+hook Stop
+osc state=done:app=claude-code
+is done
+work 4

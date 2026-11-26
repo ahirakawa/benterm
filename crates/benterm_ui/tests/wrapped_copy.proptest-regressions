@@ -1,0 +1,10 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc bca5f1fbe6d32fe640f25f42fb81722a00af7f66ed429eb2bc91f78ca97ad5df # shrinks to rows = [(['a', 'a', 'a', 'a'], Wrapped), (['a', 'a', 'a', 'a'], LineEnd)]
+cc a0fdddad0125eb424efa5875745edcf57892d9f7e609097c6c569e67589c5eb2 # shrinks to lines = ["日日a"], cols = 2, new_cols = 2
+cc e6437f29b1d3e1d789152edcaadaaa9bc351fd56fc1097e8e2181aa305b5c40d # shrinks to lines = ["本日本"], cols = 2
+cc e8cab5adb733298b3b577fa7336e6204b8b230e85383b52d7d6d74bb7e1405d6 # shrinks to lines = [" 本  aa日日"], cols = 2, new_cols = 6

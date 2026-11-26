@@ -1,0 +1,8 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 31568687d27c80ce7df5bd16b6d37550ba7047199d2aab3bba228e1899503a32 # shrinks to b = Left, col = 95, row = 0, m = Mods { shift: false, alt: false, control: false }
+cc 909fd4c83e15f943f9691bb982af4503e73ee82aa5a86a6555c2fd29dd52ace5 # shrinks to e = MouseEvent { action: Press(Left), cell: CellPoint { col: 95, row: 0 }, mods: Mods { shift: false, alt: false, control: false } }
